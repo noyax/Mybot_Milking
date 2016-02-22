@@ -28,12 +28,12 @@ Local $x = 30, $y = 145
 $grpResourceOnStart = GUICtrlCreateGroup(GetTranslated(11, 2, "Started with"), $x - 20, $y - 15, 90, 90)
 $lblResultStatsTemp = GUICtrlCreateLabel(GetTranslated(11, 3, "Report") & @CRLF & GetTranslated(11, 4, "will appear") & @CRLF & GetTranslated(11, 5, "here on") & @CRLF & GetTranslated(11, 6, "first run."), $x - 15, $y + 5, 100, 65, BitOR($SS_LEFT, $BS_MULTILINE))
 GUICtrlCreateIcon($pIconLib, $eIcnGold, $x + 50, $y, 16, 16)
-$lblResultGoldStart = GUICtrlCreateLabel("", $x - 15, $y + 2, 60, 17, $SS_RIGHT)
+$lblResultGoldStart = GUICtrlCreateLabel("", $x - 10, $y + 2, 55, 17, $SS_RIGHT)
 $txtTip = GetTranslated(11, 7, "The amount of Gold you had when the bot started.")
 GUICtrlSetTip(-1, $txtTip)
 $y += 17
 GUICtrlCreateIcon($pIconLib, $eIcnElixir, $x + 50, $y, 16, 16)
-$lblResultElixirStart = GUICtrlCreateLabel("", $x - 15, $y + 2, 60, 17, $SS_RIGHT)
+$lblResultElixirStart = GUICtrlCreateLabel("", $x - 10, $y + 2, 55, 17, $SS_RIGHT)
 $txtTip = GetTranslated(11, 8, "The amount of Elixir you had when the bot started.")
 GUICtrlSetTip(-1, $txtTip)
 $y += 17
@@ -148,6 +148,20 @@ $y = 220
 $btnResetStats = GUICtrlCreateButton(GetTranslated(11,31, "Reset Stats"), $x + 1, $y + 3, 60, 20)
 GUICtrlSetOnEvent(-1, "btnResetStats")
 GUICtrlSetState(-1, $GUI_DISABLE)
+
+;noyax top
+$x = 20
+$chkCoCStats = GUICtrlCreateCheckbox("CoCStats Activate", $x+5 , $y , -1, -1)
+$txtTip = "Activate sending raid results to CoCStats.com"
+GUICtrlSetTip(-1, $txtTip)
+GUICtrlSetOnEvent(-1, "chkCoCStats")
+$x += 130
+$lblAPIKey = GUICtrlCreateLabel("API Key :", $x, $y+5 , -1, 21, $SS_LEFT)
+$txtAPIKey = GUICtrlCreateInput("", $x + 40, $y , 200, 20, BitOR($GUI_SS_DEFAULT_INPUT, $ES_CENTER))
+$txtTip = "Join in CoCStats.com and input API Key here"
+GUICtrlSetTip(-1, $txtTip)
+GUICtrlSetOnEvent(-1, "txtAPIKey")
+;noyax bottom
 
 $x = 30
 $y = 260
