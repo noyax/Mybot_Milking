@@ -282,6 +282,9 @@ Func ParseAttackCSV($debug = False)
 						Local $hSleepTimer = TimerInit()
 						While TimerDiff($hSleepTimer) < $sleep
 							;READ RESOURCES
+							local $tmpGold = $Gold
+							local $tmpElix = $Elixir
+							local $tmpDark = $DarkElixir
 							$Gold = getGoldVillageSearch(48, 69)
 							$Elixir = getElixirVillageSearch(48, 69 + 29)
 							$Trophies = getTrophyVillageSearch(48, 69 + 99)
@@ -291,7 +294,7 @@ Func ParseAttackCSV($debug = False)
 								$DarkElixir = ""
 								$Trophies = getTrophyVillageSearch(48, 69 + 69)
 							EndIf
-							SetLog("detected [G]: " & $Gold & " [E]: " & $Elixir & " [DE]: " & $DarkElixir, $COLOR_BLUE)
+							If ($tmpGold <> $Gold) or ($tmpElix <> $Elixir) or ($tmpDark <> $DarkElixir) then SetLog("detected [G]: " & $Gold & " [E]: " & $Elixir & " [DE]: " & $DarkElixir, $COLOR_BLUE)
 							;EXIT IF RESOURCES = 0
 							If $ichkEndNoResources = 1 And Number($Gold) = 0 And Number($Elixir) = 0 And Number($DarkElixir) = 0 Then
 								If $DebugSetLog = 1 Then Setlog("From Attackcsv: Gold & Elixir & DE = 0, end battle ", $COLOR_PURPLE)
