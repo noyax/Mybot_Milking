@@ -175,7 +175,9 @@ Func AttackReport()
 			$iShareAttackNow = 0
 		EndIf
 	EndIf
-
+	
+	CoCStats($starsearned) ; noyax
+	
 	If $FirstAttack = 0 Then $FirstAttack = 1
 	$iGoldTotal += $iGoldLast + $iGoldLastBonus
 	$iTotalGoldGain[$iMatchMode] += $iGoldLast + $iGoldLastBonus
