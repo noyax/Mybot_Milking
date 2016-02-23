@@ -1,5 +1,5 @@
 V3.0.5
-- 
+- fix pb with cocstats
 
 v3.0.4
 - Adapt v3.0.3 to new version of Mybot V5.2.1
