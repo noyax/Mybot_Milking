@@ -16,43 +16,43 @@
 ;~ -------------------------------------------------------------
 ;~ Milking Tab
 ;~ -------------------------------------------------------------
-$tabMilking = GUICtrlCreateTabItem("Milking")
+$tabMilking = GUICtrlCreateTabItem(GetTranslated(99,1, "Milking"))
 	Local $x = 30, $y = 150
-	$grpMilking = GUICtrlCreateGroup("Milking Parameters", $x - 20, $y - 20, 450, 375)
-		$lblcommon = GUICtrlCreateLabel("***** Common to 2 Milking methods (Scripted and new below)*****", $x , $y + 3)
+	$grpMilking = GUICtrlCreateGroup(GetTranslated(99,2, "Milking Parameters"), $x - 20, $y - 20, 450, 375)
+		$lblcommon = GUICtrlCreateLabel(GetTranslated(99,3, "***** Common to 2 Milking methods (Scripted and new below)*****"), $x , $y + 3)
 		$y += 23
-		$chkDBAttMilk = GUICtrlCreateCheckbox( "Milking with", $x, $y, -1, -1)
-			$txtTip = "Use Gobelins Power to try Milking."
+		$chkDBAttMilk = GUICtrlCreateCheckbox(GetTranslated(99,4, "Milking with"), $x, $y, -1, -1)
+			$txtTip = GetTranslated(99,5, "Use Gobelins Power to try Milking.")
 			GUICtrlSetTip(-1, $txtTip)
 			GUICtrlSetState(-1, $GUI_CHECKED)
 			GUICtrlSetOnEvent(-1, "milkingatt")
 		$txtDBAttMilk = GUICtrlCreateInput("90", $x + 75, $y + 3, 25, 18, BitOR($GUI_SS_DEFAULT_INPUT, $ES_CENTER, $ES_NUMBER))
-			$txtTip = "Number of troops used for milking attack"
+			$txtTip = GetTranslated(99,6, "Number of troops used for milking attack")
 			GUICtrlSetTip(-1, $txtTip)
 			GUICtrlSetLimit(-1, 5)
 			_GUICtrlEdit_SetReadOnly(-1, False)
-		$lblDBAttMilkDB = GUICtrlCreateLabel("Troops in camps before 1st attack", $x + 102, $y + 3)
+		$lblDBAttMilkDB = GUICtrlCreateLabel(GetTranslated(99,7, "Troops in camps before 1st attack"), $x + 102, $y + 3)
 		$y += 23
-		$lblHysterGobs = GUICtrlCreateLabel("Nb troops mini in camps before re-train:", $x - 5 , $y + 3)
+		$lblHysterGobs = GUICtrlCreateLabel(GetTranslated(99,8, "Nb troops mini in camps before re-train:"), $x - 5 , $y + 3)
 		$txtchkHysterGobs = GUICtrlCreateInput("40", $x + 200, $y , 25, 18, BitOR($GUI_SS_DEFAULT_INPUT, $ES_CENTER, $ES_NUMBER))
-			$txtTip = "Number min of troops before train again"
+			$txtTip = GetTranslated(99,9, "Number min of troops before train again")
 			GUICtrlSetTip(-1, $txtTip)
 			GUICtrlSetLimit(-1, 3)
 			_GUICtrlEdit_SetReadOnly(-1, False)
 		$y += 21
-		$lblTempoTrain = GUICtrlCreateLabel("Nb minutes max between 2 training:", $x - 5 , $y + 3)
+		$lblTempoTrain = GUICtrlCreateLabel(GetTranslated(99,10, "Nb minutes max between 2 training:"), $x - 5 , $y + 3)
 ;		$y += 23
 		$txtchkTempoTrain = GUICtrlCreateInput("15", $x + 200, $y , 25, 18, BitOR($GUI_SS_DEFAULT_INPUT, $ES_CENTER, $ES_NUMBER))
-			$txtTip = "Number minutes max between 2 trains troops"
+			$txtTip = GetTranslated(99,11, "Number minutes max between 2 trains troops")
 			GUICtrlSetTip(-1, $txtTip)
 			GUICtrlSetLimit(-1, 3)
 			_GUICtrlEdit_SetReadOnly(-1, False)
 		$y += 23
-		$lblnew = GUICtrlCreateLabel("****** Scripted method, use only if scripted attack is chosen *******", $x , $y + 3)
+		$lblnew = GUICtrlCreateLabel(GetTranslated(99,12, "****** Scripted method, use only if scripted attack is chosen *******"), $x , $y + 3)
 		$y += 23
-		$lblPixelmaxExposed2 = GUICtrlCreateLabel("Nb pixels to redline to consider exposed:", $x - 5 , $y )
+		$lblPixelmaxExposed2 = GUICtrlCreateLabel(GetTranslated(99,13, "Nb pixels to redline to consider exposed:"), $x - 5 , $y )
 		$txtchkPixelmaxExposed2 = GUICtrlCreateInput("40", $x + 200, $y , 25, 18, BitOR($GUI_SS_DEFAULT_INPUT, $ES_CENTER, $ES_NUMBER))
-			$txtTip = "Number min of Pixels to considere collectors exposed"
+			$txtTip = GetTranslated(99,14, "Number min of Pixels to considere collectors exposed")
 			GUICtrlSetTip(-1, $txtTip)
 			GUICtrlSetLimit(-1, 3)
 			_GUICtrlEdit_SetReadOnly(-1, False)
@@ -61,21 +61,21 @@ $tabMilking = GUICtrlCreateTabItem("Milking")
 ;		$y += 23
 ;		$lblPixelmaxExposed2 = GUICtrlCreateLabel(" more chance you have to fail attack. 25 seems to be the minimum but too strict. 40 seems good result.", $x - 5 , $y )
 		$y += 30
-		$lblnew = GUICtrlCreateLabel("****** New method, inactivates if scripted attack is chosen. It's for future update *******", $x , $y + 3)
+		$lblnew = GUICtrlCreateLabel(GetTranslated(99,15, "****** New method, inactivates if scripted attack is chosen. It's for future update *******"), $x , $y + 3)
 		$y += 23
-		$lblPixelmaxExposed = GUICtrlCreateLabel("Nb tiles to redline to consider exposed:", $x - 5 , $y )
+		$lblPixelmaxExposed = GUICtrlCreateLabel(GetTranslated(99,16, "Nb tiles to redline to consider exposed:"), $x - 5 , $y )
 		$txtchkPixelmaxExposed = GUICtrlCreateInput("1", $x + 200, $y , 25, 18, BitOR($GUI_SS_DEFAULT_INPUT, $ES_CENTER, $ES_NUMBER))
-			$txtTip = "Number min of Tiles to considere collectors exposed"
+			$txtTip = GetTranslated(99,17, "Number min of Tiles to considere collectors exposed")
 			GUICtrlSetTip(-1, $txtTip)
 			GUICtrlSetLimit(-1, 3)
 			_GUICtrlEdit_SetReadOnly(-1, False)
 		$y += 21
 		$txtDBUseGobsForCollector = GUICtrlCreateInput("5", $x, $y, 25, 18, BitOR($GUI_SS_DEFAULT_INPUT, $ES_CENTER, $ES_NUMBER))
-			$txtTip = "Bot tries to use X amount of Goblins to attack each exposed collector"
+			$txtTip = GetTranslated(99,18, "Bot tries to use X amount of Goblins to attack each exposed collector")
 			GUICtrlSetTip(-1, $txtTip)
 			GUICtrlSetLimit(-1, 3)
 			_GUICtrlEdit_SetReadOnly(-1, False)
-		$lblUseForColl2 = GUICtrlCreateLabel("Gobs / collectors" , $x + 30, $y, -1, -1)
+		$lblUseForColl2 = GUICtrlCreateLabel(GetTranslated(99,19, "Gobs / collectors"), $x + 30, $y, -1, -1)
 ;		$y += 26
 		$chkMilkAttackNearGoldMine = GUICtrlCreateCheckbox("", $x + 120, $y, 17, 17)
 			$txtTip = GetTranslated(3,37, "Drop troops near Gold Mines")
@@ -93,13 +93,13 @@ $tabMilking = GUICtrlCreateTabItem("Milking")
 		$picMilkAttackNearDarkElixirDrill = GUICtrlCreateIcon($pIconLib, $eIcnDrill, $x + 250 , $y - 3, 24, 24)
  			GUICtrlSetTip(-1, $txtTip)
 		$y += 40
-		$lblnew = GUICtrlCreateLabel("****** Option TH Snipe *******", $x , $y + 3)
+		$lblnew = GUICtrlCreateLabel(GetTranslated(99,20, "****** Option TH Snipe *******"), $x , $y + 3)
 		$y += 23
-		$chkAttIfDB = GUICtrlCreateCheckbox("Attack if loots <", $x  , $y, -1, -1)
-			$txtTip = "Attack if TH Snipe found dead base"
+		$chkAttIfDB = GUICtrlCreateCheckbox(GetTranslated(99,21, "Attack if loots <"), $x  , $y, -1, -1)
+			$txtTip = GetTranslated(99,22, "Attack if TH Snipe found dead base")
 			GUICtrlSetTip(-1, $txtTip)
 			GUICtrlSetState(-1, $GUI_ENABLE)
-		$lblAttIfDB = GUICtrlCreateLabel("% of total loots", $x + 125, $y+5, -1, 17)
+		$lblAttIfDB = GUICtrlCreateLabel(GetTranslated(99,23, "% of total loots"), $x + 125, $y+5, -1, 17)
 		    GUICtrlSetTip(-1, $txtTip)
 		$txtAttIfDB = GUICtrlCreateInput("10", $x + 95, $y + 1, 25, 18, BitOR($GUI_SS_DEFAULT_INPUT, $ES_CENTER, $ES_NUMBER))
 			GUICtrlSetTip(-1, $txtTip)
