@@ -1,3 +1,8 @@
+v3.0.6
+- Fix error variable used without being declared in FindPixelCloser.au3
+- Add translation possible like MBR official in section [99] on each language file
+
+
 V3.0.5
 - fix pb with cocstats
 
