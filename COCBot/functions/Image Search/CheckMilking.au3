@@ -415,7 +415,7 @@ Func SaveStatChkMilk($tempfich)
 	EndIf
 	FileClose($hFile)
 
-EndFunc   ;==>SaveStatChkDeadBase
+EndFunc   ;==>SaveStatChkMilk
 
 Func DebugImageSave2($TxtName = "Unknown", $hBitmap = "")
 

@@ -1,3 +1,8 @@
+v3.0.7
+- hide cocstats api key when bot running
+- use lib imglocV8.dll by @trlopes
+- New logo, thanks to @davideroma94
+
 v3.0.6
 - Fix error variable used without being declared in FindPixelCloser.au3
 - Add translation possible like MBR official in section [99] on each language file
