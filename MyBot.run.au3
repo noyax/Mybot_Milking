@@ -50,7 +50,7 @@ If $aCmdLine[0] < 2 Then
 	If Not $FoundRunningAndroid Then DetectInstalledAndroid()
 EndIf
 ; Update Bot title
-$sBotTitle = $sBotTitle & " . MOD Milking " & $MilkVer ; Noyax
+$sBotTitle = $sBotTitle & "(" & ($AndroidInstance <> "" ? $AndroidInstance : $Android) & ")" & " MOD Milking " & $MilkVer ; Noyax
 
 If $bBotLaunchOption_Restart = True Then
    If CloseRunningBot($sBotTitle) = True Then
@@ -507,5 +507,4 @@ Func Attack() ;Selects which algorithm
 		algorithm_AllTroops()
 	EndIf
 EndFunc   ;==>Attack
-
 
